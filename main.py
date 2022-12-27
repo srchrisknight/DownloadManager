@@ -185,5 +185,3 @@ def start(watchList = [], intervalSeconds = 5):
 
 if __name__ == '__main__':
 	start(watchList = ['C:/Users/Chris/Downloads'])
-	# runArchiveCleanup()
-	# runArchiveManager()
