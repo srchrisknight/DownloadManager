@@ -108,6 +108,9 @@ def runArchiveManager():
 def runArchiveCleanup():
 	deArchiveDir = os.path.join(DOWNLOADS_FOLDER, '_archives','_dearchive')
 
+	if not os.path.isdir(deArchiveDir):
+		os.makedirs(deArchiveDir)
+
 	for f in os.listdir(deArchiveDir):
 		filepath = os.path.join(deArchiveDir, f)
 		if not os.path.isdir(filepath):
@@ -184,4 +187,4 @@ def start(watchList = [], intervalSeconds = 5):
 
 
 if __name__ == '__main__':
-	start(watchList = ['C:/Users/Chris/Downloads'])
+	start(watchList = [os.path.join(os.environ['USERPROFILE'], 'Downloads')])

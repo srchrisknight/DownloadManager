@@ -26,11 +26,11 @@ class FolderWatcher(object):
 
 
 if __name__ == "__main__":
-	FW = FolderWatcher('C:/Users/Chris/Downloads')
-	newFile = os.path.join('C:/Users/Chris/Downloads', 'newFile.txt')
+	FW = FolderWatcher(os.path.join(os.environ['USERPROFILE'], 'Downloads'))
+	# newFile = os.path.join('C:/Users/Chris/Downloads', 'newFile.txt')
 
-	with open(newFile, 'w') as txtFile:
-		pass
+	# with open(newFile, 'w') as txtFile:
+	# 	pass
 
 	if FW.checkForUpdates():
 		print('running update')
